@@ -1,42 +1,58 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C:/Users/home/workspace/CucumberProject/src/main/java/Com/Featuresfiles/Featureswithtagsdemo.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("./Resourcesfolder/Dbqueryvalidation.feature");
 formatter.feature({
   "line": 1,
-  "name": "Testing cucumber with tags diferent levels",
-  "description": "",
-  "id": "testing-cucumber-with-tags-diferent-levels",
+  "name": "employee table validation",
+  "description": "Description: Validate that if employee table is having correct records",
+  "id": "employee-table-validation",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 31,
-  "name": "below test for  Prod env and staging and regression  testing",
+  "line": 8,
+  "name": "Validate employee table records",
   "description": "",
-  "id": "testing-cucumber-with-tags-diferent-levels;below-test-for--prod-env-and-staging-and-regression--testing",
+  "id": "employee-table-validation;validate-employee-table-records",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 30,
-      "name": "@Prodtest"
-    },
-    {
-      "line": 30,
-      "name": "@Stagingtessst"
-    },
-    {
-      "line": 30,
-      "name": "@Regressiontest"
+      "line": 7,
+      "name": "@employeetableval"
     }
   ]
 });
 formatter.step({
-  "line": 32,
-  "name": "user is performed Prod env and staging and regression  testing",
+  "line": 9,
+  "name": "user is already connected mysql database",
   "keyword": "Given "
 });
+formatter.step({
+  "line": 10,
+  "name": "employee column values of empid,empname,empsal,empdept should be displayed as below",
+  "rows": [
+    {
+      "cells": [
+        "120",
+        "ramesh",
+        "5000",
+        "software"
+      ],
+      "line": 11
+    }
+  ],
+  "keyword": "Then "
+});
 formatter.match({
-  "location": "Loginstepwithtagsdemo.user_is_performed_Prod_env_and_staging_and_regression_testing()"
+  "location": "Stepdefinationdatabasetable.user_is_already_connected_mysql_database()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1616712699,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Stepdefinationdatabasetable.employee_column_values_of_empid_empname_empsal_empdept_should_be_displayed_as_below(DataTable)"
+});
+formatter.result({
+  "duration": 83944281,
+  "status": "passed"
 });
 });
